@@ -4,11 +4,13 @@
 <!-- HTML Content -->
 <html>
     <head>
-        <title>
-            index page
-        </title>
+        <meta charset="utf-8">
+        <title>index page</title>
+        <!-- CSS Styles -->
+        <link rel="stylesheet" href="public/css/.css">
     </head>
     <body>
         
+        <!-- JS Scripts -->
     </body>
 </html>
