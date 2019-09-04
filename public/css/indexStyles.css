@@ -3,5 +3,22 @@
     padding: 0;
 }
 html,body {
-    background-color: black;
+    background-color: rba(255, 255, 255);
+}
+/* Header Styles */
+header {
+    width: 100%;
+    height: 170px;
+    background-color: rgb(0, 80, 169);
+}
+img.menuIcon {
+    height: 60px;
+    margin-top: 50px;
+    margin-left: 50px;
+}
+img.searchIcon {
+    height: 60px;
+    float: right;
+    margin-right: 50px;
+    margin-top: 50px;
 }
