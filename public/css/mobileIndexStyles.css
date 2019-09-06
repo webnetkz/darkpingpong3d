@@ -1,0 +1,18 @@
+/* Styles for mobile device */
+@media only screen and (max-device-width: 900px) {
+    /* Header Styles */
+    header {
+        height: 170px;
+    }
+    img.menuIcon {
+        height: 60px;
+        margin-top: 50px;
+        margin-left: 50px;
+    }
+    img.searchIcon {
+        height: 60px;
+        float: right;
+        margin-right: 50px;
+        margin-top: 50px;
+    }
+}
