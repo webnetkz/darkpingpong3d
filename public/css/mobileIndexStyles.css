@@ -20,5 +20,18 @@
         margin-right: 25px;
         margin-top: 25px;
     }
+    /* Index Content Styles */
+    div#indexContent {
+        background-color: rgba(0, 0, 0, 0.1);
+        background-position: center;
+        background-size: cover;
+        height: 350px;
+        background-image: url("../img/indexContent.png");
+    }
+    div.indexContent {
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
 
 }

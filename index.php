@@ -23,7 +23,9 @@
             </div>
             <!-- Index Content -->
             <div id="indexContent">
-
+                <div class="indexContent">
+                    
+                </div>
             </div>
         </header>
         <!-- JS Scripts -->
