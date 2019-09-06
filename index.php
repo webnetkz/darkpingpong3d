@@ -25,7 +25,6 @@
             <div id="indexContent">
 
             </div>
-
         </header>
         <!-- JS Scripts -->
         <script src="public/js/menu.js"></script>

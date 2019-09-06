@@ -1,18 +1,24 @@
 /* Styles for mobile device */
-@media only screen and (max-device-width: 900px) {
+@media only screen and (max-width: 900px) {
     /* Header Styles */
     header {
-        height: 170px;
+        height: 70px;
+        width: 100%;
+        background-color: rgb(0, 80, 169);
+    }
+    div#headerBlock {
+        height: 100%;
     }
     img.menuIcon {
-        height: 60px;
-        margin-top: 50px;
-        margin-left: 50px;
+        height: 25px;
+        margin-top: 25px;
+        margin-left: 25px;
     }
     img.searchIcon {
-        height: 60px;
+        height: 25px;
         float: right;
-        margin-right: 50px;
-        margin-top: 50px;
+        margin-right: 25px;
+        margin-top: 25px;
     }
+
 }
