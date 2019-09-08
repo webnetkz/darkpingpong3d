@@ -28,9 +28,9 @@
 
                     <form action="#" class="indexForm">
                         <input type="text" class="indexInp indexInpOne" placeholder="место нахождения">
-                        <input type="text" class="indexInp indexInpTwo" placeholder="поиск">
+                        <input type="text" class="indexInp indexInpTwo" placeholder="поиск аренды">
 
-                        <input type="submit" type="submit" value="Поиск Аренды" class="indexFormBtn">
+                        <input type="submit" type="submit" value="Поиск" class="indexFormBtn">
                     </form>
                 </div>
             </div>
