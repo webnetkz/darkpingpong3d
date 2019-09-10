@@ -11,12 +11,27 @@
         <!-- CSS styles -->
         <link rel="stylesheet" href="public/css/indexStyles.css">
         <link rel="stylesheet" href="public/css/mobileIndexStyles.css">
+        <link rel="shortcut icon" href="public/img/mini_logo.png" type="image/png">
     </head>
     <body>
+
+        <menu class="hidden" style="width: 100%; height; 100%; background-color: black;">
+            <pre>
+                3
+                3
+                3
+                3
+                3
+                3
+                3
+                3
+            </pre>
+        </menu>
+
         <header>
             <!-- Header block -->
             <div id="headerBlock">
-                <img src="public/img/icons/menu.svg" alt="menu bar" class="menuIcon">
+                <img src="public/img/icons/menu.svg" onclick="handlerMenu();" id="menuBtn" alt="menu bar" class="menuIcon">
 
                 <img src="public/img/icons/cart.svg" alt="market cart" class="searchIcon">
                 <img src="public/img/icons/search.svg" alt="search glass" class="searchIcon">

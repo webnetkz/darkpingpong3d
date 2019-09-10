@@ -1,5 +1,12 @@
 /* Styles for mobile device */
 @media only screen and (max-width: 900px) {
+    /* All styles */
+    .visible {
+        display: block;
+    }
+    .hidden {
+        display: none;
+    }
     /* Header styles */
     header {
         height: 60px;
