@@ -4,12 +4,12 @@ function handlerMenu() {
     var menuClass = menu.getAttribute('class');
 
     switch(menuClass) {
-        case 'hidden':
-        menu.setAttribute('class', 'visible');
+        case 'hiddenMenu':
+        menu.setAttribute('class', 'visibleMenu');
         break;
 
-        case 'visible':
-        menu.setAttribute('class', 'hidden');
+        case 'visibleMenu':
+        menu.setAttribute('class', 'hiddenMenu');
         break;
     }
 }

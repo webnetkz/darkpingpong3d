@@ -1,12 +1,7 @@
 /* Styles for mobile device */
 @media only screen and (max-width: 900px) {
     /* All styles */
-    .visible {
-        display: block;
-    }
-    .hidden {
-        display: none;
-    }
+
     /* Header styles */
     header {
         height: 60px;
@@ -26,6 +21,30 @@
         float: right;
         margin-top: 22px;
         margin-right: 25px;
+    }
+    /* Menu styles */
+    .visibleMenu {
+        display: block;
+    }
+    .hiddenMenu {
+        display: none;
+    }
+    menu {
+
+    }
+    div.menuContent {
+        position: fixed;
+        width: 70%;
+        height: 100%;
+        background-color: rgb(255, 255, 255);
+        z-index: 5;
+    }
+    div.closeMenu {
+        position: fixed;
+        left: 70%;
+        height: 100%;
+        width: 30%;
+        background-color: rgba(0, 0, 0, 0.3);
     }
     /* Index content styles */
     div#indexContent {

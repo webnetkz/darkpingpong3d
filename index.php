@@ -15,17 +15,13 @@
     </head>
     <body>
 
-        <menu class="hidden" style="width: 100%; height; 100%; background-color: black;">
-            <pre>
-                3
-                3
-                3
-                3
-                3
-                3
-                3
-                3
-            </pre>
+        <menu class="hiddenMenu">
+            <div class="menuContent">
+                123123
+            </div>
+            <div class="closeMenu" onclick="handlerMenu();">
+                23423
+            </div>
         </menu>
 
         <header>
