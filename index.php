@@ -17,7 +17,7 @@
 
         <menu class="hiddenMenu">
             <div class="menuContent">
-                123123
+                Menu
             </div>
             <div class="closeMenu" onclick="handlerMenu();">
                 <img src="public/img/icons/close.svg" alt="close icon" class="closeIcon">
