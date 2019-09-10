@@ -20,7 +20,7 @@
                 123123
             </div>
             <div class="closeMenu" onclick="handlerMenu();">
-                23423
+                <img src="public/img/icons/close.svg" alt="close icon" class="closeIcon">
             </div>
         </menu>
 
