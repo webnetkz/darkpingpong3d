@@ -18,7 +18,7 @@
         <menu class="hiddenMenu">
             <div class="menuContent">
                 <br><br>
-                    <a href="#" class="sign">Авторизация / Регистрация</a>
+                    <a href="index.php" class="sign">Авторизация / Регистрация</a>
                 <br><br><br><br><br>
                 <p class="categories">КАТЕГОРИИ</p>
                 <ul>
