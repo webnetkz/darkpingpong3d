@@ -17,7 +17,13 @@
 
         <menu class="hiddenMenu">
             <div class="menuContent">
-                Menu
+                <br><br>
+                    <a href="#" class="sign">Авторизация / Регистрация</a>
+                <br><br><br><br><br>
+                <p class="categories">КАТЕГОРИИ</p>
+                <ul>
+                    <li></li>
+                </ul>
             </div>
             <div class="closeMenu" onclick="handlerMenu();">
                 <img src="public/img/icons/close.svg" alt="close icon" class="closeIcon">

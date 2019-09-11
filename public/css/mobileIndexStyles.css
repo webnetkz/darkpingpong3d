@@ -32,6 +32,20 @@
     menu {
 
     }
+    a.sign {
+        margin-left: 25px;
+        text-decoration: none;
+        color: rgb(0, 80, 169);
+        font-weight: 700;
+    }
+    p.categories {
+        padding: 10px;
+        padding-left: 20px;
+        font-size: 0.7em;
+        font-weight: 700;
+        color: rgb(140, 140, 140);
+        background-color: rgb(233, 233, 233);
+    }
     div.menuContent {
         position: fixed;
         width: 70%;
