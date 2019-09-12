@@ -1,2 +1,16 @@
-<?xml version="1.0"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 426.667 426.667" style="enable-background:new 0 0 426.667 426.667;" xml:space="preserve" width="512px" height="512px" class=""><g><path d="M213.333,0C95.514,0,0,95.514,0,213.333s95.514,213.333,213.333,213.333  s213.333-95.514,213.333-213.333S331.153,0,213.333,0z M330.995,276.689l-54.302,54.306l-63.36-63.356l-63.36,63.36l-54.302-54.31  l63.356-63.356l-63.356-63.36l54.302-54.302l63.36,63.356l63.36-63.356l54.302,54.302l-63.356,63.36L330.995,276.689z" data-original="#F05228" class="active-path" data-old_color="#F05228" fill="#008CFF"/></g> </svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW X6 -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="100%" height="100%" version="1.1" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd"
+viewBox="0 0 21000 29700"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+ <g id="Слой_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_300577064">
+   <rect fill="#FBFBFB" stroke="#2B2A29" stroke-width="20" x="5033" y="9408" width="8941" height="8698"/>
+   <g>
+    <path fill="#008CFF" d="M9504 6983c-3741,0 -6773,3033 -6773,6774 0,3740 3032,6773 6773,6773 3741,0 6773,-3033 6773,-6773 0,-3741 -3032,-6774 -6773,-6774zm3736 8785l-1724 1724 -2012 -2011 -2012 2012 -1724 -1725 2012 -2011 -2012 -2012 1724 -1724 2012 2011 2012 -2011 1724 1724 -2012 2012 2012 2011z" data-original="#F05228" data-old_color="#F05228"/>
+   </g>
+  </g>
+ </g>
+</svg>
