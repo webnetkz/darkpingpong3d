@@ -22,7 +22,9 @@
                 <br><br><br><br><br>
                 <p class="categories">КАТЕГОРИИ</p>
                 <ul>
-                    <li></li>
+                    <li class="menuItem">Прокат</li>
+                    <li class="menuItem">Услуги</li>
+                    <li class="menuItem">Товары</li>
                 </ul>
             </div>
             <div class="closeMenu" onclick="handlerMenu();">
