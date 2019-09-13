@@ -14,8 +14,9 @@
         <link rel="shortcut icon" href="public/img/mini_logo.png" type="image/png">
     </head>
     <body>
-
+        <!-- Append blocks -->
         <menu class="hiddenMenu">
+            <!-- Menu block -->
             <div class="menuContent">
                 <br><br>
                     <a href="index.php" class="sign">Авторизация / Регистрация</a>
@@ -31,14 +32,20 @@
                 <img src="public/img/icons/close.svg" alt="close icon" class="closeIcon">
             </div>
         </menu>
+        <form action="index.php" method="GET" class="hiddenSearch" id="searchForm">
+            <!-- Search form -->
+            <p class="closeSearch" onclick="handlerSearch();">Закрыть</p>
+            <input type="text" class="searchInp">
+            <input type="text" class="searchInp">
+        </form>
 
         <header>
             <!-- Header block -->
             <div id="headerBlock">
                 <img src="public/img/icons/menu.svg" onclick="handlerMenu();" id="menuBtn" alt="menu bar" class="menuIcon">
 
-                <img src="public/img/icons/cart.svg" alt="market cart" class="searchIcon">
-                <img src="public/img/icons/search.svg" alt="search glass" class="searchIcon">
+                <img src="public/img/icons/cart.svg" id="searchBtn" alt="market cart" class="searchIcon">
+                <img src="public/img/icons/search.svg" onclick="handlerSearch();" alt="search glass" class="searchIcon">
             </div>
             <!-- Index content -->
             <div id="indexContent">
@@ -56,5 +63,6 @@
         </header>
         <!-- JS scripts -->
         <script src="public/js/menu.js"></script>
+        <script src="public/js/search.js"></script>
     </body>
 </html>

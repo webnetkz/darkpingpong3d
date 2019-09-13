@@ -68,6 +68,36 @@
         margin-left: 10px;
         height: 62px;
     }
+    /* Search styles */
+    .hiddenSearch {
+        position: fixed;
+        top: -10em;
+    }
+    .visibleSearch {
+        position: fixed;
+        top: 0;
+    }
+    form#searchForm {
+        transition-duration: 1s;
+        background-color: rgb(0, 80, 169);
+        width: 100%;
+        height: 10em;
+        color: red;
+    }
+    p.closeSearch {
+        color: rgb(255, 255, 255);
+        float: right;
+        padding: 20px;
+    }
+    input.searchInp {
+        width: 90%;
+        margin-left: 5%;
+        margin-bottom: 10px;
+        font-size: 1.9em;
+        border: none;
+        border-radius: 4px;
+        outline: none;
+    }
     /* Index content styles */
     div#indexContent {
         background-color: rgba(0, 0, 0, 0.1);
