@@ -14,7 +14,7 @@
         <link rel="shortcut icon" href="public/img/mini_logo.png" type="image/png">
         <!-- Description meta -->
         <description>
-         <description>
+        <description>
     </head>
     <body>
         <!-- Append blocks -->
