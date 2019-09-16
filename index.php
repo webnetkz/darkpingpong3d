@@ -12,6 +12,9 @@
         <link rel="stylesheet" href="public/css/indexStyles.css">
         <link rel="stylesheet" href="public/css/mobileIndexStyles.css">
         <link rel="shortcut icon" href="public/img/mini_logo.png" type="image/png">
+        <!-- Description meta -->
+        <description>
+         <description>
     </head>
     <body>
         <!-- Append blocks -->
