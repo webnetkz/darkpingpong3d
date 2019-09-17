@@ -12,13 +12,13 @@
 
         <div id="indexContent">
             <div class="indexContent">
-                <h1 class="indexH1">Арендовать подходящее оборудование и инструменты. Прямо сейчас.</h1>
+                <h1 class="indexH1">Заказать услугу. Снять в прокат, купить недвижимость или товар.</h1>
 
                 <form action="#" class="indexForm">
                     <input type="text" class="indexInp indexInpOne" placeholder="место нахождения">
-                    <input type="text" class="indexInp indexInpTwo" placeholder="поиск аренды">
+                    <input type="text" class="indexInp indexInpTwo" placeholder="поиск">
 
-                    <input type="submit" type="submit" value="Поиск" class="indexFormBtn">
+                    <input type="submit" type="submit" value="Найти" class="indexFormBtn">
                 </form>
             </div>
         </div>
