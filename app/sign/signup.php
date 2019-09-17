@@ -1,9 +1,9 @@
 <?php
 
-        // Errors on
-        ini_set('error_reporting', E_ALL);
-        ini_set('display_errors', 1);
-        ini_set('display_startup_errors', 1);
+    // Errors on
+    ini_set('error_reporting', E_ALL);
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
 
     require_once '../PDO/connect.php';
 
@@ -16,13 +16,14 @@
         
         $pass = password_hash($pass, PASSWORD_DEFAULT);
 
-        $sql = 'INSERT INTO users(name, password, email)' VALUES(:name, :pass);
-        $params = [':name' => $name, ':pass' => $pass];
+        
 
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute($params);
+        $sql = 'INSERT INTO users(`name`, `password`, `email`) VALUES("'.$name.'", "'.$pass.'", "'.$email.'");';
+        $stmt = $pdo->query($sql);
 
-        echo 'Register' . $name;
+        if(!empty($stmt)) {
+            echo $name;
+        }
 
     }else{
         echo 'Zapolnite vse polya!';
