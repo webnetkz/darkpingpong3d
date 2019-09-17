@@ -1,71 +1,30 @@
 <?php
 
-?>
-<!-- HTML Content -->
-<html>
-    <head>
-        <!-- HTML Metas -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <title>Start page</title>
-        <!-- CSS styles -->
-        <link rel="stylesheet" href="public/css/indexStyles.css">
-        <link rel="stylesheet" href="public/css/mobileIndexStyles.css">
-        <link rel="shortcut icon" href="public/img/mini_logo.png" type="image/png">
-        <!-- Description meta -->
-        <description>
-        <description>
-    </head>
-    <body>
-        <!-- Append blocks -->
-        <menu class="hiddenMenu">
-            <!-- Menu block -->
-            <div class="menuContent">
-                <br><br>
-                    <a href="index.php" class="sign">Авторизация / Регистрация</a>
-                <br><br><br><br><br>
-                <p class="categories">КАТЕГОРИИ</p>
-                <ul>
-                    <li class="menuItem">Прокат</li>
-                    <li class="menuItem">Услуги</li>
-                    <li class="menuItem">Товары</li>
-                </ul>
-            </div>
-            <div class="closeMenu" onclick="handlerMenu();">
-                <img src="public/img/icons/close.svg" alt="close icon" class="closeIcon">
-            </div>
-        </menu>
-        <form action="index.php" method="GET" class="hiddenSearch" id="searchForm">
-            <!-- Search form -->
-            <p class="closeSearch" onclick="handlerSearch();">Закрыть</p>
-            <input type="text" class="searchInp">
-            <input type="text" class="searchInp">
-        </form>
+    // Errors on
+    ini_set('error_reporting', E_ALL);
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
 
-        <header>
-            <!-- Header block -->
-            <div id="headerBlock">
-                <img src="public/img/icons/menu.svg" onclick="handlerMenu();" id="menuBtn" alt="menu bar" class="menuIcon">
+    // All variables
+    $title = 'Start page';
+    $path = '';
+    $content = '
 
-                <img src="public/img/icons/cart.svg" id="searchBtn" alt="market cart" class="searchIcon">
-                <img src="public/img/icons/search.svg" onclick="handlerSearch();" alt="search glass" class="searchIcon">
+        <div id="indexContent">
+            <div class="indexContent">
+                <h1 class="indexH1">Арендовать подходящее оборудование и инструменты. Прямо сейчас.</h1>
+
+                <form action="#" class="indexForm">
+                    <input type="text" class="indexInp indexInpOne" placeholder="место нахождения">
+                    <input type="text" class="indexInp indexInpTwo" placeholder="поиск аренды">
+
+                    <input type="submit" type="submit" value="Поиск" class="indexFormBtn">
+                </form>
             </div>
-            <!-- Index content -->
-            <div id="indexContent">
-                <div class="indexContent">
-                    <h1 class="indexH1">Арендовать подходящее оборудование и инструменты. Прямо сейчас.</h1>
+        </div>
 
-                    <form action="#" class="indexForm">
-                        <input type="text" class="indexInp indexInpOne" placeholder="место нахождения">
-                        <input type="text" class="indexInp indexInpTwo" placeholder="поиск аренды">
+    ';
 
-                        <input type="submit" type="submit" value="Поиск" class="indexFormBtn">
-                    </form>
-                </div>
-            </div>
-        </header>
-        <!-- JS scripts -->
-        <script src="public/js/menu.js"></script>
-        <script src="public/js/search.js"></script>
-    </body>
-</html>
+    require_once 'tamplate.php';
+
+

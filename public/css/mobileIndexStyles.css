@@ -32,7 +32,16 @@
         left: -100%;
     }
     menu {
+        position: relative;
         transition-duration: 1s;
+        z-index: 99;
+    }
+    a.homePage {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        color: rgb(0, 80, 169);
+        margin: 20px auto;
     }
     a.sign {
         margin-left: 25px;
@@ -41,6 +50,7 @@
         font-weight: 700;
     }
     p.categories {
+        margin-top: 30px;
         padding: 10px;
         padding-left: 20px;
         font-size: 0.7em;
