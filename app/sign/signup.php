@@ -22,7 +22,9 @@
         $stmt = $pdo->query($sql);
 
         if(!empty($stmt)) {
-            echo $name;
+            session_start();
+            $_SESSION['name'] = $name;
+            echo $_SESSION['name'];
         }
 
     }else{
