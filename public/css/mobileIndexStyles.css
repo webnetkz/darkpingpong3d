@@ -176,4 +176,30 @@
         margin-left: 30%;
         margin-top: 2em;
     }
+    form.signForm {
+        margin-top: 5em;
+        background-color: rgb(233, 233, 233);
+        padding: 3em;
+    }
+    input.input {
+        width: 90%;
+        margin-left: 5%;
+        margin-bottom: 1px;
+        border: 1px solid rgb(0, 80, 169);
+        padding: 5px;
+        font-size: 1.3em;
+        border-radius: 4px;
+    }
+    input.button {
+        display: block;
+        background-color: rgb(0, 80, 169);
+        color: rgb(255, 255, 255);
+        border: none;
+        border-radius: 4px;
+        padding: 10px;
+        font-size: 1em;
+        width: 80%;
+        margin-left: 10%;
+        margin-top: 2em;
+    }
 }

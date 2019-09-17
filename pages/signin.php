@@ -10,8 +10,14 @@
     $path = '../';
     $content = '
     
-        <p>Hello</p>
+        
 
     ';
 
     require_once '../tamplate.php';
+    ?>
+    <form action="../app/sign/signin.php" method="POST" class="signForm">
+        <input type="text" name="nameLog" class="input" placeholder="Имя">
+        <input type="password" name="passLog" class="input" placeholder="Пароль">
+        <input type="submit" class="button" value="Войти">
+    </form>

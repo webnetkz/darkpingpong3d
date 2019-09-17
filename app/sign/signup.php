@@ -13,7 +13,17 @@
     $email = trim($_POST['email']);
 
     if(!empty($name) && !empty($pass) && !empty($pass2) && !empty($email)) {
-        echo $name;
+        
+        $pass = password_hash($pass, PASSWORD_DEFAULT);
+
+        $sql = 'INSERT INTO users(name, password, email)' VALUES(:name, :pass);
+        $params = [':name' => $name, ':pass' => $pass];
+
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute($params);
+
+        echo 'Register' . $name;
+
     }else{
         echo 'Zapolnite vse polya!';
     }

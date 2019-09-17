@@ -10,12 +10,12 @@
     $path = '../';
     $content = '
     
-        <form action="../app/sign/signup.php" method="POST">
-            <input type="text" name="name">
-            <input type="password" name="pass">
-            <input type="passowrd" name="pass2">
-            <input type="email" name="email">
-            <input type="submit" name="sub">
+        <form action="../app/sign/signup.php" method="POST" class="signForm">
+            <input type="text" name="name" class="input" placeholder="Имя">
+            <input type="password" name="pass" class="input" placeholder="Пароль">
+            <input type="passowrd" name="pass2" class="input" placeholder="Повторите пароль">
+            <input type="email" name="email" class="input" placeholder="Email">
+            <input type="submit" name="sub" class="button">
         </form>
 
     ';
