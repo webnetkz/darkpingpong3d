@@ -10,8 +10,16 @@
     $path = '../';
     $content = '
     
-        <p>Sign up</p>
+        <form action="../app/sign/signup.php" method="POST">
+            <input type="text" name="name">
+            <input type="password" name="pass">
+            <input type="passowrd" name="pass2">
+            <input type="email" name="email">
+            <input type="submit" name="sub">
+        </form>
 
     ';
 
     require_once '../tamplate.php';
+    ?>
+
