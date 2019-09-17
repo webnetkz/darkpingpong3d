@@ -12,19 +12,24 @@
     $pass2 = trim($_POST['pass2']);
     $email = trim($_POST['email']);
 
+    $name = htmlentities($name);
+    $pass = htmlentities($pass);
+    $email = htmlentities($email);
+
     if(!empty($name) && !empty($pass) && !empty($pass2) && !empty($email)) {
         
         $pass = password_hash($pass, PASSWORD_DEFAULT);
 
         
-
         $sql = 'INSERT INTO users(`name`, `password`, `email`) VALUES("'.$name.'", "'.$pass.'", "'.$email.'");';
         $stmt = $pdo->query($sql);
 
         if(!empty($stmt)) {
+
             session_start();
             $_SESSION['name'] = $name;
-            echo $_SESSION['name'];
+            
+            header('Location: ../../profile.php');
         }
 
     }else{

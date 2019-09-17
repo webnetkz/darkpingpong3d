@@ -1,5 +1,11 @@
 <?php
 
+    session_start();
+
+    /*if(!empty($_SESSION['name'])) {
+        header('Location: ../../profile.php');
+    }*/
+
     // Errors on
     ini_set('error_reporting', E_ALL);
     ini_set('display_errors', 1);
