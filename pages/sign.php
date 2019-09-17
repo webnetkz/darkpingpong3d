@@ -10,7 +10,8 @@
     $path = '../';
     $content = '
     
-        <a href="signin.php">Sign In</a>
+        <a href="signin.php" class="OneBtn">Авторизация</a>
+        <a href="signup.php" class="OneBtn">Регистрация</a>
 
     ';
 

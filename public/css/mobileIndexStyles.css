@@ -162,4 +162,18 @@
         background-color: rgb(249, 146, 34);
         border-radius: 4px;
     }
+    /* Content sign style */
+    a.OneBtn {
+        display: block;
+        background-color: rgb(0, 80, 169);
+        color: rgb(255, 255, 255);
+        border: none;
+        border-radius: 4px;
+        padding: 10px;
+        font-size: 1.5em;
+        text-decoration: none;
+        width: 40%;
+        margin-left: 30%;
+        margin-top: 2em;
+    }
 }

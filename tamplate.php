@@ -18,7 +18,7 @@
             <!-- Menu block -->
             <div class="menuContent">
                 <br>
-                    <a href="<?=$path?>" class="homePage">Главная</a>
+                    <a href="<?=$path?>/index.php" class="homePage">Главная</a>
                     <a href="<?=$path?>pages/sign.php" class="sign">Авторизация / Регистрация</a>
                 <p class="categories">КАТЕГОРИИ</p>
                 <ul>
@@ -40,8 +40,8 @@
         <form action="index.php" method="GET" class="hiddenSearch" id="searchForm">
             <!-- Search form -->
             <p class="closeSearch" onclick="handlerSearch();">Закрыть</p>
-            <input type="text" class="searchInp">
-            <input type="text" class="searchInp">
+            <input type="text" class="searchInp" placeholder="место нахождения">
+            <input type="text" class="searchInp" placeholder="поиск">
         </form>
 
         <header>
@@ -49,7 +49,9 @@
             <div id="headerBlock">
                 <img src="<?=$path?>public/img/icons/menu.svg" onclick="handlerMenu();" id="menuBtn" alt="menu bar" class="menuIcon">
 
-                <img src="<?=$path?>public/img/icons/cart.svg" id="searchBtn" alt="market cart" class="searchIcon">
+                <a href="<?=$path?>profile.php">
+                    <img src="<?=$path?>public/img/icons/user.svg" id="searchBtn" alt="market cart" class="searchIcon">
+                </a>
                 <img src="<?=$path?>public/img/icons/search.svg" onclick="handlerSearch();" alt="search glass" class="searchIcon">
             </div>
             <!-- All content -->

@@ -6,12 +6,12 @@
     ini_set('display_startup_errors', 1);
 
     // All variables
-    $title = 'Авторизация';
-    $path = '../';
+    $title = 'Login';
+    $path = '';
     $content = '
-    
-        <p>Hello</p>
+
+        LOGIN
 
     ';
 
-    require_once '../tamplate.php';
+    require_once 'tamplate.php';

@@ -7,7 +7,11 @@
 
     // All variables
     $title = 'Регистрация';
+    $path = '../';
+    $content = '
+    
+        <p>Sign up</p>
+
+    ';
 
     require_once '../tamplate.php';
-
-?>
