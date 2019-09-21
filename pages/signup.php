@@ -9,6 +9,9 @@
 
     // Если кнопка отправить нажата
     if(!empty($_POST['sub'])) {
+        
+        $err = [];
+
         // Проверка имени
         if($_POST['name']) {
             $name = trim($_POST['name']);
@@ -17,28 +20,31 @@
             $sql = 'SELECT * FROM users WHERE name = "'. $name .'"';
 
         }else{
-            echo 'Введите имя!';
+            $err = 'Введите имя!';
         }
+        
         // Проверка пароля
         if($_POST['pass']) {
             $pass = trim($_POST['pass']);
             $pass = htmlentities($pass);
         }else{
-            echo 'Введите пароль!';
+            $err = 'Введите пароль!';
         }
+        
         // Проверка повторного пароля
         if($_POST['pass2'] && $_POST['pass2'] == $_POST['pass']) {
             $pass2 = trim($_POST['pass2']);
             $pass = password_hash($pass, PASSWORD_DEFAULT);
         }else{
-            echo 'Повторный пароль введен не верно!';
+            $err = 'Повторный пароль введен не верно!';
         }
+        
         // Проверка почтового адреса
         if($_POST['email']) {
             $email = trim($_POST['email']);
             $email = htmlentities($email);
         }else{
-            echo 'Введите почтовый адрес!';
+            $err = 'Введите почтовый адрес!';
         }
 
         /*
@@ -57,7 +63,11 @@
         }
         */
     }else{
-        echo 'Zapolnite vse polya!';
+        $err = 'Zapolnite vse polya!';
+    }
+
+    if($err) {
+        echo $err;
     }
 
     //Session block
