@@ -5,7 +5,7 @@
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
 
-    include_once '../app/PDO/connect.php';
+    require_once '../app/PDO/connect.php';
 
     // Если кнопка отправить нажата
     if(!empty($_POST['sub'])) {
@@ -17,7 +17,16 @@
             $name = trim($_POST['name']);
             $name = htmlentities($name);
 
+            // Проверка на существование логина
             $sql = 'SELECT * FROM users WHERE name = "'. $name .'"';
+            $res = $pdo->query($sql);
+            $res = $res->fetch(PDO::FETCH_ASSOC);
+            
+            if($res['name'] !== $name) {
+                $err = 'bad name';
+            }else{
+                echo $name;
+            }
 
         }else{
             $err = 'Введите имя!';
@@ -62,15 +71,14 @@
             header('Location: ../../profile.php');
         }
         */
-    }else{
-        $err = 'Zapolnite vse polya!';
     }
 
-    if($err) {
+    // Проверка существование ошибок
+    if(!empty($err)) {
         echo $err;
     }
 
-    //Session block
+    // Старт сессии
     session_start();
 
     /*if(!empty($_SESSION['name'])) {
@@ -78,7 +86,14 @@
     }*/   
 
 
-    // All variables
+    // Переменные
+    if(empty($name)) {
+        $name = '';
+    }
+    if(empty($email)) {
+        $email = '';
+    }
+
     $title = 'Регистрация';
     $path = '../';
     $content = '
