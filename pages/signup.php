@@ -1,5 +1,12 @@
 <?php
 
+    // Старт сессии
+    session_start();
+
+    if(!empty($_SESSION['name'])) {
+        header('Location: ../profile.php');
+    }  
+
     // Errors on
     ini_set('error_reporting', E_ALL);
     ini_set('display_errors', 1);
@@ -13,7 +20,7 @@
         $err = [];
 
         // Проверка имени
-        if($_POST['name']) {
+        if(!empty($_POST['name'])) {
             $name = trim($_POST['name']);
             $name = htmlentities($name);
 
@@ -23,75 +30,71 @@
             $res = $res->fetch(PDO::FETCH_ASSOC);
             
             if($res['name'] !== $name) {
-                $err = 'bad name';
+
+                // Проверка почтового адреса
+                if(!empty($_POST['email'])) {
+                    $email = trim($_POST['email']);
+                    $email = htmlentities($email);
+
+                    // Проверка на существование почтового адреса
+                    $sqlMail = 'SELECT * FROM users WHERE email = "'. $email .'"';
+                    $resMail = $pdo->query($sqlMail);
+                    $resMail = $resMail->fetch(PDO::FETCH_ASSOC);
+
+                    if($resMail['email'] !== $email) {
+
+                        // Проверка пароля
+                        if(!empty($_POST['pass'])) {
+                            $pass = trim($_POST['pass']);
+                            $pass = htmlentities($pass);
+                        }else{
+                            $err = 'Введите пароль!';
+                        }
+                        
+                        // Проверка повторного пароля
+                        if($_POST['pass2'] && $_POST['pass2'] == $_POST['pass']) {
+                            $pass2 = trim($_POST['pass2']);
+                            $pass = password_hash($pass, PASSWORD_DEFAULT);
+
+                            // Регистрация
+                            $sqlReg = 'INSERT INTO users(`name`, `email`) VALUES("'.$name.'", "'.$email.'");';
+                            $resReg = $pdo->query($sqlReg);
+                    
+                            if(!empty($resReg)) {
+                    
+                                $_SESSION['name'] = $name;
+                                
+                                header('Location: ../profile.php');
+                            }
+                        }else{
+                            $err = 'Повторный пароль введен не верно!';
+                        }
+                    }else{
+                        $err = 'Пользователь с таким почтовым адресом существует';
+                    }
+                }else{
+                    $err = 'Введите почтовый адрес!';
+                }
             }else{
-                echo $name;
+                $err = 'Пользователь с таким именем существует';
             }
 
         }else{
             $err = 'Введите имя!';
         }
-        
-        // Проверка пароля
-        if($_POST['pass']) {
-            $pass = trim($_POST['pass']);
-            $pass = htmlentities($pass);
-        }else{
-            $err = 'Введите пароль!';
-        }
-        
-        // Проверка повторного пароля
-        if($_POST['pass2'] && $_POST['pass2'] == $_POST['pass']) {
-            $pass2 = trim($_POST['pass2']);
-            $pass = password_hash($pass, PASSWORD_DEFAULT);
-        }else{
-            $err = 'Повторный пароль введен не верно!';
-        }
-        
-        // Проверка почтового адреса
-        if($_POST['email']) {
-            $email = trim($_POST['email']);
-            $email = htmlentities($email);
-        }else{
-            $err = 'Введите почтовый адрес!';
-        }
-
-        /*
-
-
-
-        //$sql = 'INSERT INTO users(`name`, `password`, `email`) VALUES("'.$name.'", "'.$pass.'", "'.$email.'");';
-        //$stmt = $pdo->query($sql);
-
-        if(!empty($stmt)) {
-
-            session_start();
-            $_SESSION['name'] = $name;
-            
-            header('Location: ../../profile.php');
-        }
-        */
     }
+
+        // Переменные
+        if(empty($name)) {
+            $name = '';
+        }
+        if(empty($email)) {
+            $email = '';
+        }
 
     // Проверка существование ошибок
     if(!empty($err)) {
         echo $err;
-    }
-
-    // Старт сессии
-    session_start();
-
-    /*if(!empty($_SESSION['name'])) {
-        header('Location: ../../profile.php');
-    }*/   
-
-
-    // Переменные
-    if(empty($name)) {
-        $name = '';
-    }
-    if(empty($email)) {
-        $email = '';
     }
 
     $title = 'Регистрация';
@@ -103,7 +106,7 @@
             <input type="password" name="pass" class="input" placeholder="Пароль">
             <input type="password" name="pass2" class="input" placeholder="Повторите пароль">
             <input type="email" name="email" class="input" placeholder="Email" value="'. $email .'">
-            <input type="submit" name="sub" class="button">
+            <input type="submit" name="sub" class="button" value="Регистрация">
         </form>
 
     ';

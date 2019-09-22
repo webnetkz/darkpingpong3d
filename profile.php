@@ -7,6 +7,12 @@
 
     session_start();
 
+    if(!empty($_SESSION['name'])) {
+        $name = $_SESSION['name'];
+    }else{
+        $name = 'Login';
+    }
+
     // All variables
     $title = 'Login';
     $path = '';
@@ -14,6 +20,6 @@
 
 
 
-    '.$_SESSION['name'];
+    '.$name;
 
     require_once 'tamplate.php';
