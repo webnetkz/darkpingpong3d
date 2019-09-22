@@ -7,7 +7,7 @@
         header('Location: ../profile.php');
     }  
 
-    // Errors on
+    // Включение режима ошибок
     ini_set('error_reporting', E_ALL);
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
@@ -57,9 +57,10 @@
                             $pass = password_hash($pass, PASSWORD_DEFAULT);
 
                             // Регистрация
-                            $sqlReg = 'INSERT INTO users(`name`, `email`) VALUES("'.$name.'", "'.$email.'");';
+                            $sqlReg = 'INSERT INTO users(`name`, `pass`, `email`) VALUES("'.$name.'", "'.$pass.'", "'.$email.'");';
                             $resReg = $pdo->query($sqlReg);
                     
+                            // Редирект при успешной регистрации
                             if(!empty($resReg)) {
                     
                                 $_SESSION['name'] = $name;
@@ -101,16 +102,17 @@
     $path = '../';
     $content = '
     
-        <form action="signup.php" method="POST" class="signForm">
-            <input type="text" name="name" class="input" placeholder="Имя" value="'. $name .'">
-            <input type="password" name="pass" class="input" placeholder="Пароль">
-            <input type="password" name="pass2" class="input" placeholder="Повторите пароль">
-            <input type="email" name="email" class="input" placeholder="Email" value="'. $email .'">
-            <input type="submit" name="sub" class="button" value="Регистрация">
-        </form>
 
     ';
 
     require_once '../tamplate.php';
+    
     ?>
+    <form action="signup.php" method="POST" class="signForm">
+        <input type="text" name="name" class="input" placeholder="Имя" value="<?=$name?>">
+        <input type="password" name="pass" class="input" placeholder="Пароль">
+        <input type="password" name="pass2" class="input" placeholder="Повторите пароль">
+        <input type="email" name="email" class="input" placeholder="Email" value="<?=$email?>">
+        <input type="submit" name="sub" class="button" value="Регистрация">
+    </form>
 
