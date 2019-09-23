@@ -22,16 +22,17 @@
                     <a href="<?=$path?>pages/sign.php" class="sign">Авторизация / Регистрация</a>
                 <p class="categories">КАТЕГОРИИ</p>
                 <ul>
-                    <a href="pages/hire.php">
+                    <a href="pages/hire.php" class="menuLink">
                         <li class="menuItem">Прокат</li>
                     </a>
-                    <a href="pages/services.php">
+                    <a href="pages/services.php" class="menuLink">
                         <li class="menuItem">Услуги</li>
                     </a>
-                    <a href="pages/goods.php">
+                    <a href="pages/goods.php" class="menuLink">
                         <li class="menuItem">Товары</li>
                     </a>
                 </ul>
+                <p class="categories" style="margin-top: 4px;"></p>
             </div>
             <div class="closeMenu" onclick="handlerMenu();">
                 <img src="<?=$path?>public/img/icons/close.svg" alt="close icon" class="closeIcon">

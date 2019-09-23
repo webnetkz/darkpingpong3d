@@ -78,6 +78,18 @@
         margin-left: 10px;
         height: 62px;
     }
+    a.menuLink {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        margin: 3px;
+        color: rgb(255, 255, 255);
+    }
+    a.menuLink>li {
+        padding: 3px;
+        background-color: rgb(140, 140, 140);
+        list-style-type: none;
+    }
     /* Search styles */
     .hiddenSearch {
         position: fixed;

@@ -5,23 +5,19 @@
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
 
-    $name = 'Login';
-
     session_start();
 
-    if(!empty($_SESSION['name'])) {
-        $name = $_SESSION['name'];
-    }else{
+    if(empty($_SESSION['name'])) {
         header('Location: pages/sign.php');
     }
 
     // Переменные
-    $title = $name;
-    $path = '';
+    $title = 'Добавить';
+    $path = '../';
     $content = '
 
 
 
-    '.$name;
+    ';
 
-    require_once 'tamplate.php';
+    require_once '../tamplate.php';
