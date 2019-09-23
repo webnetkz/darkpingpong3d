@@ -48,11 +48,21 @@
             <!-- Header block -->
             <div id="headerBlock">
                 <img src="<?=$path?>public/img/icons/menu.svg" onclick="handlerMenu();" id="menuBtn" alt="menu bar" class="menuIcon">
-
                 <a href="<?=$path?>profile.php">
                     <img src="<?=$path?>public/img/icons/user.svg" id="searchBtn" alt="market cart" class="searchIcon">
                 </a>
                 <img src="<?=$path?>public/img/icons/search.svg" onclick="handlerSearch();" alt="search glass" class="searchIcon">
+                <?php
+                    if(!empty($_SESSION['name'])) {
+                        echo '<a href="';
+                        echo $path;
+                        echo 'pages/append.php">';
+                        echo '<img src="';
+                        echo $path;
+                        echo 'public/img/icons/add.svg" alt="plus" class="searchIcon">
+                        </a>';
+                    }
+                ?>
             </div>
             <!-- All content -->
             <?=$content?>

@@ -5,16 +5,18 @@
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
 
+    $name = 'Login';
+
     session_start();
 
     if(!empty($_SESSION['name'])) {
         $name = $_SESSION['name'];
     }else{
-        $name = 'Login';
+        header('Location: pages/sign.php');
     }
 
-    // All variables
-    $title = 'Login';
+    // Переменные
+    $title = $name;
     $path = '';
     $content = '
 
