@@ -1,22 +1,15 @@
 <?php
 
-    // Старт сессии
-    session_start();
+    // Файл отладки
+    require_once '../app/config/debug.php';
 
-    if(!empty($_SESSION['name'])) {
-        header('Location: ../profile.php');
-    }  
-
-    // Включение режима ошибок
-    ini_set('error_reporting', E_ALL);
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-
+    // Подключение БД
     require_once '../app/PDO/connect.php';
 
-    // Если кнопка отправить нажата
-    if(!empty($_POST['sub'])) {
+    // Отправка формы
+    if(!empty($_POST['go'])) {
         
+        // Блок ошибок
         $err = [];
 
         // Проверка имени
@@ -30,7 +23,7 @@
             $res = $res->fetch(PDO::FETCH_ASSOC);
             
             if($res['name'] !== $name) {
-                $err = 'Пользователь с таким именем не зарегистрирован';
+                $err = '<p class="visibleEr error" onclick="closeError();">Пользователь с таким именем не зарегистрирован</p>';
             }else{
 
                 // Проверка пароля
@@ -48,22 +41,21 @@
                         $_SESSION['name'] = $name;
                         header('Location: ../profile.php');
                     }else{
-                        $err = 'Не верный парль';
+                        $err = '<p class="error">Не верный парль</p>';
                     }
                 }else{
-                    $err = 'Введите пароль!';
+                    $err = '<p class="error">Введите пароль!</p>';
                 }
             }
 
         }else{
-            $err = 'Введите имя!';
+            $err = '<p class="error">Введите имя!</p>';
         }
     }
 
-        // Переменные
-        if(empty($name)) {
-            $name = '';
-        }
+    if(empty($name)) {
+        $name = '';
+    }
 
     // Проверка существование ошибок
     if(!empty($err)) {
@@ -84,5 +76,6 @@
     <form action="signin.php" method="POST" class="signForm">
         <input type="text" name="name" class="input" placeholder="Имя" value="<?=$name?>">
         <input type="password" name="pass" class="input" placeholder="Пароль">
-        <input type="submit" class="button" value="Войти" value="Войти" name="sub">
+        <input type="submit" class="button" value="Войти" name="go">
     </form>
+    <a href="signup.php" class="link">Регистрация</a>

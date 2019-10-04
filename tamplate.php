@@ -19,7 +19,7 @@
             <div class="menuContent">
                 <br>
                     <a href="<?=$path?>/index.php" class="homePage">Главная</a>
-                    <a href="<?=$path?>pages/sign.php" class="sign">Авторизация / Регистрация</a>
+                    <a href="<?=$path?>pages/signin.php" class="sign">Авторизация / Регистрация</a>
                 <p class="categories">КАТЕГОРИИ</p>
                 <ul>
                     <a href="pages/hire.php" class="menuLink">
@@ -72,5 +72,6 @@
         <!-- JS scripts -->
         <script src="<?=$path?>public/js/menu.js"></script>
         <script src="<?=$path?>public/js/search.js"></script>
+        <script src="<?=$path?>public/js/closeError.js"></script>
     </body>
 </html>

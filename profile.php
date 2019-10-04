@@ -12,7 +12,7 @@
     if(!empty($_SESSION['name'])) {
         $name = $_SESSION['name'];
     }else{
-        header('Location: pages/sign.php');
+        header('Location: pages/signin.php');
     }
 
     // Переменные

@@ -1,17 +1,9 @@
 <?php
 
-    // Старт сессии
-    session_start();
+    // Файл отладки
+    require_once '../app/config/debug.php';
 
-    if(!empty($_SESSION['name'])) {
-        header('Location: ../profile.php');
-    }  
-
-    // Включение режима ошибок
-    ini_set('error_reporting', E_ALL);
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-
+    // Подключение БД
     require_once '../app/PDO/connect.php';
 
     // Если кнопка отправить нажата

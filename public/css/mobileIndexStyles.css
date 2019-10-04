@@ -1,6 +1,9 @@
 /* Styles for mobile device */
 @media only screen and (max-width: 900px) {
     /* All styles */
+    body {
+        background-color: rgb(233, 233, 233);
+    }
 
     /* Header styles */
     header {
@@ -213,5 +216,23 @@
         width: 80%;
         margin-left: 10%;
         margin-top: 2em;
+    }
+    a.link {
+        display: block;
+        text-align: center;
+    }
+    /* Errors styles */
+    p.error {
+        box-sizing: border-box;
+        position: fixed;
+        top: 0;
+        left: 5%;
+        width: 90%;
+        text-align: center;
+        color: rgb(0, 0, 0);
+        background-color: rgba(255, 255, 255, 1);
+        box-shadow: 0 0 10px rgb(0, 0, 0);
+        padding: 20px;
+        transition-duration: 700ms;
     }
 }
