@@ -10,18 +10,19 @@
             <link rel="stylesheet" href="<?=$path?>public/css/mobileIndexStyles.css">
             <link rel="shortcut icon" href="<?=$path?>public/img/mini_logo.png" type="image/png">
             <!-- Description meta -->
-    
         </head>
         <body>
         <!-- Append blocks -->
         <menu class="hiddenMenu">
             <!-- Menu block -->
             <div class="menuContent">
-                <br>
-                    <a href="<?=$path?>/index.php" class="homePage">Главная</a>
-                    <a href="<?=$path?>pages/signin.php" class="sign">Авторизация / Регистрация</a>
-                <p class="categories">КАТЕГОРИИ</p>
-                <ul>
+                <div class="headerMenu">
+                    <br>
+                        <a href="<?=$path?>/index.php" class="homePage">Главная</a>
+                        <a href="<?=$path?>pages/signin.php" class="sign">Авторизация / Регистрация</a>
+                    <p class="categories">КАТЕГОРИИ</p> 
+                </div>
+                <ul class="menuUl">
                     <a href="pages/hire.php" class="menuLink">
                         <li class="menuItem">Прокат</li>
                     </a>
@@ -32,7 +33,6 @@
                         <li class="menuItem">Товары</li>
                     </a>
                 </ul>
-                <p class="categories" style="margin-top: 4px;"></p>
             </div>
             <div class="closeMenu" onclick="handlerMenu();">
                 <img src="<?=$path?>public/img/icons/close.svg" alt="close icon" class="closeIcon">

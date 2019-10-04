@@ -22,6 +22,17 @@
 
 
 
-    '.$name;
+    ';
 
     require_once 'tamplate.php';
+
+?>
+
+    <div class="headerProfile">
+        <img src="public/img/icons/bigUser.svg" alt="user icon" class="imgUser">
+        <p class="login">
+            <?=$name?>
+        </p>
+        <a href="pages/exit.php" class="button">Выйти</a>
+    </div>
+    

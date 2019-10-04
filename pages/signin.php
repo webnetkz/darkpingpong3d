@@ -41,15 +41,15 @@
                         $_SESSION['name'] = $name;
                         header('Location: ../profile.php');
                     }else{
-                        $err = '<p class="error">Не верный парль</p>';
+                        $err = '<p class="visibleEr error" onclick="closeError();">Не верный парль</p>';
                     }
                 }else{
-                    $err = '<p class="error">Введите пароль!</p>';
+                    $err = '<p class="visibleEr error" onclick="closeError();">Введите пароль!</p>';
                 }
             }
 
         }else{
-            $err = '<p class="error">Введите имя!</p>';
+            $err = '<p class="visibleEr error" onclick="closeError();>Введите имя!</p>';
         }
     }
 

@@ -23,61 +23,44 @@
             
             if($res['name'] !== $name) {
 
-                // Проверка почтового адреса
-                if(!empty($_POST['email'])) {
-                    $email = trim($_POST['email']);
-                    $email = htmlentities($email);
+                // Проверка пароля
+                if(!empty($_POST['pass'])) {
+                    $pass = trim($_POST['pass']);
+                    $pass = htmlentities($pass);
+                }else{
+                    $err = 'Введите пароль!';
+                }
+                
+                // Проверка повторного пароля
+                if($_POST['pass2'] && $_POST['pass2'] == $_POST['pass']) {
+                    $pass2 = trim($_POST['pass2']);
+                    $pass = password_hash($pass, PASSWORD_DEFAULT);
 
-                    // Проверка на существование почтового адреса
-                    $sqlMail = 'SELECT * FROM users WHERE email = "'. $email .'"';
-                    $resMail = $pdo->query($sqlMail);
-                    $resMail = $resMail->fetch(PDO::FETCH_ASSOC);
-
-                    if($resMail['email'] !== $email) {
-
-                        // Проверка пароля
-                        if(!empty($_POST['pass'])) {
-                            $pass = trim($_POST['pass']);
-                            $pass = htmlentities($pass);
-                        }else{
-                            $err = 'Введите пароль!';
-                        }
+                    // Регистрация
+                    $sqlReg = 'INSERT INTO users(`name`, `pass`, `email`) VALUES("'.$name.'", "'.$pass.'", "'.$email.'");';
+                    $resReg = $pdo->query($sqlReg);
+            
+                    // Редирект при успешной регистрации
+                    if(!empty($resReg)) {
+            
+                        $_SESSION['name'] = $name;
                         
-                        // Проверка повторного пароля
-                        if($_POST['pass2'] && $_POST['pass2'] == $_POST['pass']) {
-                            $pass2 = trim($_POST['pass2']);
-                            $pass = password_hash($pass, PASSWORD_DEFAULT);
-
-                            // Регистрация
-                            $sqlReg = 'INSERT INTO users(`name`, `pass`, `email`) VALUES("'.$name.'", "'.$pass.'", "'.$email.'");';
-                            $resReg = $pdo->query($sqlReg);
-                    
-                            // Редирект при успешной регистрации
-                            if(!empty($resReg)) {
-                    
-                                $_SESSION['name'] = $name;
-                                
-                                header('Location: ../profile.php');
-                            }
-                        }else{
-                            $err = 'Повторный пароль введен не верно!';
-                        }
-                    }else{
-                        $err = 'Пользователь с таким почтовым адресом существует';
+                        header('Location: ../profile.php');
                     }
                 }else{
-                    $err = 'Введите почтовый адрес!';
+                    $err = '<p class="visibleEr error" onclick="closeError();">Заполните поле с паролем</p>';
                 }
-            }else{
-                $err = 'Пользователь с таким именем существует';
-            }
 
+            }else{
+                $err = '<p class="visibleEr error" onclick="closeError();">Пользователь с таким именем существует</p>';
+            }
+            
         }else{
-            $err = 'Введите имя!';
+            $err = '<p class="visibleEr error" onclick="closeError();">Введите имя!</p></p>';
         }
     }
-
-        // Переменные
+    
+    // Переменные
         if(empty($name)) {
             $name = '';
         }
@@ -94,9 +77,9 @@
     $path = '../';
     $content = '
     
-
+    
     ';
-
+    
     require_once '../tamplate.php';
     
     ?>
@@ -104,7 +87,27 @@
         <input type="text" name="name" class="input" placeholder="Имя" value="<?=$name?>">
         <input type="password" name="pass" class="input" placeholder="Пароль">
         <input type="password" name="pass2" class="input" placeholder="Повторите пароль">
-        <input type="email" name="email" class="input" placeholder="Email" value="<?=$email?>">
+       <!-- <input type="email" name="email" class="input" placeholder="Email" value="<?//=$email?>">-->
         <input type="submit" name="sub" class="button" value="Регистрация">
     </form>
 
+
+    <!--// Проверка почтового адреса
+    if(!empty($_POST['email'])) {
+        $email = trim($_POST['email']);
+        $email = htmlentities($email);
+
+        // Проверка на существование почтового адреса
+        $sqlMail = 'SELECT * FROM users WHERE email = "'. $email .'"';
+        $resMail = $pdo->query($sqlMail);
+        $resMail = $resMail->fetch(PDO::FETCH_ASSOC);
+
+        if($resMail['email'] !== $email) {
+
+            
+        }else{
+            $err = '<p class="visibleEr error" onclick="closeError();">Пользователь с таким почтовым адресом существует</p>';
+        }
+    }else{
+        $err = '<p class="visibleEr error" onclick="closeError();">Введите почтовый адрес!</p>';
+    }-->

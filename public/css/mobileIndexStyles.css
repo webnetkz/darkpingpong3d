@@ -43,13 +43,13 @@
         display: block;
         text-align: center;
         text-decoration: none;
-        color: rgb(0, 80, 169);
+        color: rgb(255, 255, 255);
         margin: 20px auto;
     }
     a.sign {
         margin-left: 25px;
         text-decoration: none;
-        color: rgb(0, 80, 169);
+        color: rgb(255, 255, 255);
         font-weight: 700;
     }
     p.categories {
@@ -87,11 +87,21 @@
         text-decoration: none;
         margin: 3px;
         color: rgb(255, 255, 255);
+        border: 1px solid rgb(0, 80, 169);
+        border-radius: 5px;
+        font-weight: 700;
     }
     a.menuLink>li {
         padding: 3px;
-        background-color: rgb(140, 140, 140);
+        background-color: rgb(0, 80, 169);
         list-style-type: none;
+    }
+    div.headerMenu {
+        background-color: rgb(0, 80, 169);
+    }
+    ul.menuUl {
+        padding: 6px;
+        box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
     }
     /* Search styles */
     .hiddenSearch {
@@ -234,5 +244,32 @@
         box-shadow: 0 0 10px rgb(0, 0, 0);
         padding: 20px;
         transition-duration: 700ms;
+    }
+
+    /* Profile styles */
+    div.headerProfile {
+        background-color: rgb(255, 255, 255);
+        box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+        margin-bottom: 15px;
+    }
+    img.imgUser {
+        height: 3em;
+        margin: 10px;
+        vertical-align: middle;
+    }
+    p.login {
+        display: inline;
+        font-size: 1.4em;
+    }
+    a.button {
+        text-decoration: none;
+        padding: 7px;
+        border-radius: 7px;
+        border: 1px solid rgb(0, 80, 169);
+        float: right;
+        margin: 15px 10px;
+    }
+    hr {
+        color: rgba(0, 80, 169, 0.5);
     }
 }
