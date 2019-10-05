@@ -47,9 +47,8 @@
                     $err = '<p class="visibleEr error" onclick="closeError();">Введите пароль!</p>';
                 }
             }
-
         }else{
-            $err = '<p class="visibleEr error" onclick="closeError();>Введите имя!</p>';
+            $err = '<p class="visibleEr error" onclick="closeError();">Введите имя!</p>';
         }
     }
 

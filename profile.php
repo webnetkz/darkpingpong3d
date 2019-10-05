@@ -18,12 +18,7 @@
     // Переменные
     $title = $name;
     $path = '';
-    $content = '
-
-
-
-    ';
-
+    // Основной шаблон
     require_once 'tamplate.php';
 
 ?>
@@ -33,6 +28,12 @@
         <p class="login">
             <?=$name?>
         </p>
-        <a href="pages/exit.php" class="button">Выйти</a>
+        <a href="pages/exit.php" class="btn">Выйти</a>
     </div>
+
+    <a href="pages/append.php" class="noStyle">
+        <div class="appendProfile">
+            <img src="public/img/icons/plus.svg" alt="plus icons" class="imgAppend">Добавить объявления
+        </div>
+    </a>
     

@@ -100,6 +100,7 @@
         background-color: rgb(0, 80, 169);
     }
     ul.menuUl {
+        margin-bottom: 1em;
         padding: 6px;
         box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
     }
@@ -261,13 +262,32 @@
         display: inline;
         font-size: 1.4em;
     }
-    a.button {
+    a.btn {
         text-decoration: none;
         padding: 7px;
         border-radius: 7px;
-        border: 1px solid rgb(0, 80, 169);
+        background-color: rgb(0, 80, 169);
+        color: rgb(255, 255, 255);
+        font-weight: 600;
         float: right;
         margin: 15px 10px;
+    }
+    div.appendProfile {
+        width: 96%;
+        margin-left: 2%;
+        margin-bottom: 15px;
+        box-shadow: 0 0 7px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        background-color: rgb(255, 255, 255);
+    }
+    img.imgAppend {
+        height: 2em;
+        margin: 5px 5px;
+        vertical-align: middle;
+    }
+    a.noStyle {
+        text-decoration: none;
+        color: rgb(0, 80, 169);
     }
     hr {
         color: rgba(0, 80, 169, 0.5);

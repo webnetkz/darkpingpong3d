@@ -33,6 +33,12 @@
                         <li class="menuItem">Товары</li>
                     </a>
                 </ul>
+
+                <div>
+                    <a href="profile.php" class="menuLink">
+                        <li class="menuItem">Мой профиль</li>    
+                    </a>
+                </div>
             </div>
             <div class="closeMenu" onclick="handlerMenu();">
                 <img src="<?=$path?>public/img/icons/close.svg" alt="close icon" class="closeIcon">
@@ -54,6 +60,8 @@
                 </a>
                 <img src="<?=$path?>public/img/icons/search.svg" onclick="handlerSearch();" alt="search glass" class="searchIcon">
                 <?php
+
+                    // Если пользователь авторизован, отображение иконки добавления
                     if(!empty($_SESSION['name'])) {
                         echo '<a href="';
                         echo $path;
@@ -66,7 +74,7 @@
                 ?>
             </div>
             <!-- All content -->
-            <?=$content?>
+            
 
         </header>
         <!-- JS scripts -->

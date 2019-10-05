@@ -10,23 +10,20 @@
     // All variables
     $title = 'Start page';
     $path = '';
-    $content = '
-
-        <div id="indexContent">
-            <div class="indexContent">
-                <h1 class="indexH1">Заказать услугу. Снять в прокат, купить недвижимость или товар.</h1>
-
-                <form action="#" class="indexForm">
-                    <input type="text" class="indexInp indexInpOne" placeholder="место нахождения">
-                    <input type="text" class="indexInp indexInpTwo" placeholder="поиск">
-
-                    <input type="submit" type="submit" value="Найти" class="indexFormBtn">
-                </form>
-            </div>
-        </div>
-
-    ';
 
     require_once 'tamplate.php';
 
+?>
 
+<div id="indexContent">
+    <div class="indexContent">
+        <h1 class="indexH1">Заказать услугу. Снять в прокат, купить недвижимость или товар.</h1>
+
+        <form action="#" class="indexForm">
+            <input type="text" class="indexInp indexInpOne" placeholder="место нахождения">
+            <input type="text" class="indexInp indexInpTwo" placeholder="поиск">
+
+            <input type="submit" type="submit" value="Найти" class="indexFormBtn">
+        </form>
+    </div>
+</div>

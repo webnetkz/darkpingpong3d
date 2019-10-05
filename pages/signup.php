@@ -84,7 +84,7 @@
     
     ?>
     <form action="signup.php" method="POST" class="signForm">
-        <input type="text" name="name" class="input" placeholder="Имя" value="<?=$name?>">
+        <input type="text" name="name" class="input" placeholder="Логин" value="<?=$name?>">
         <input type="password" name="pass" class="input" placeholder="Пароль">
         <input type="password" name="pass2" class="input" placeholder="Повторите пароль">
        <!-- <input type="email" name="email" class="input" placeholder="Email" value="<?//=$email?>">-->
