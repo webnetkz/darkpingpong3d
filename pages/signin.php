@@ -64,14 +64,10 @@
     // Переменные
     $title = 'Авторизация';
     $path = '../';
-    $content = '
-    
-        
-
-    ';
 
     require_once '../tamplate.php';
     ?>
+    
     <form action="signin.php" method="POST" class="signForm">
         <input type="text" name="name" class="input" placeholder="Имя" value="<?=$name?>">
         <input type="password" name="pass" class="input" placeholder="Пароль">

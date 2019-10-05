@@ -75,14 +75,11 @@
 
     $title = 'Регистрация';
     $path = '../';
-    $content = '
-    
-    
-    ';
     
     require_once '../tamplate.php';
     
     ?>
+    
     <form action="signup.php" method="POST" class="signForm">
         <input type="text" name="name" class="input" placeholder="Логин" value="<?=$name?>">
         <input type="password" name="pass" class="input" placeholder="Пароль">
