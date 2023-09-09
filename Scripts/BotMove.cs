@@ -6,6 +6,15 @@ public class BotMove : MonoBehaviour
 {
     public float t;
     public Rigidbody ball;
+    public AudioClip shotClip;
+
+    private AudioSource audioSource;
+
+    void Start()
+    {
+      audioSource = GetComponent<AudioSource>();
+      audioSource.clip = shotClip;
+    }
 
     void Update()
     {
@@ -22,6 +31,7 @@ public class BotMove : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
+      audioSource.Play();
       ball.AddForce(new Vector3(0, 0, -40f * Time.deltaTime), ForceMode.Impulse);
     }
 

@@ -6,11 +6,13 @@ public class PlayerMove : MonoBehaviour
 {
     public float speed;
     public Rigidbody ball;
+    public AudioClip shotClip;
 
     private bool moveForward;
     private bool moveBack;
     private bool moveRight;
     private bool moveLeft;
+    private AudioSource audioSource;
 
     void Start()
     {
@@ -18,6 +20,8 @@ public class PlayerMove : MonoBehaviour
       moveLeft = true;
       moveForward = true;
       moveBack = true;
+      audioSource = GetComponent<AudioSource>();
+      audioSource.clip = shotClip;
     }
 
 
@@ -49,6 +53,7 @@ public class PlayerMove : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
+      audioSource.Play();
       ball.AddForce(new Vector3(0, 0, 40f * Time.deltaTime), ForceMode.Impulse);
     }
 
