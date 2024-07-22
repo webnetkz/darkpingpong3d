@@ -8,76 +8,50 @@ public class PlayerMove : MonoBehaviour
     public Rigidbody ball;
     public AudioClip shotClip;
 
-    private bool moveForward;
-    private bool moveBack;
-    private bool moveRight;
-    private bool moveLeft;
     private AudioSource audioSource;
 
     void Start()
     {
-      moveRight = true;
-      moveLeft = true;
-      moveForward = true;
-      moveBack = true;
-      audioSource = GetComponent<AudioSource>();
-      audioSource.clip = shotClip;
+        audioSource = GetComponent<AudioSource>();
+        audioSource.clip = shotClip;
     }
-
 
     void Update()
     {
-      if(transform.position.z >= 0f)
-      {
-        moveForward = false;
-      } else { moveForward = true; }
+        if (transform.position.z >= 0f)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, 0f);
+        }
 
-      if(transform.position.z <= -3.8f)
-      {
-        moveBack = false;
-        transform.position = new Vector3(transform.position.x, transform.position.y, -3.7f);
-      } else { moveBack = true; }
+        if (transform.position.z <= -3.8f)
+        {
+            transform.position = new Vector3(transform.position.x, transform.position.y, -3.7f);
+        }
 
-      if(transform.position.x >= -1.5f)
-      {
-        moveRight = false;
-        transform.position = new Vector3(-1.5f, transform.position.y, transform.position.z);
-      } else { moveRight = true; }
+        if (transform.position.x >= -1.5f)
+        {
+            transform.position = new Vector3(-1.5f, transform.position.y, transform.position.z);
+        }
 
-      if(transform.position.x <= -9.6f)
-      {
-        transform.position = new Vector3(-9.6f, transform.position.y, transform.position.z);
-        moveLeft = false;
-      } else { moveLeft = true; }
+        if (transform.position.x <= -9.6f)
+        {
+            transform.position = new Vector3(-9.6f, transform.position.y, transform.position.z);
+        }
     }
 
     void OnCollisionEnter(Collision other)
     {
-      audioSource.Play();
-      ball.AddForce(new Vector3(0, 0, 40f * Time.deltaTime), ForceMode.Impulse);
+        audioSource.Play();
+        ball.AddForce(new Vector3(0, 0, 40f * Time.deltaTime), ForceMode.Impulse);
     }
 
-
     void FixedUpdate()
-      {
-        if(moveForward & Input.GetKey(KeyCode.W))
-        {
-          transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z + ( speed / 2 ) * Time.deltaTime);      
-        }
+    {
+        float moveHorizontal = Input.GetAxis("Horizontal");
+        float moveVertical = Input.GetAxis("Vertical");
 
-        if(moveBack & Input.GetKey(KeyCode.S))
-        {
-          transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.z - ( speed / 2 ) * Time.deltaTime);      
-        }
+        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical);
 
-        if(moveRight & Input.GetKey(KeyCode.D))
-        {
-          transform.position = new Vector3(transform.position.x + speed * Time.deltaTime, transform.position.y, transform.position.z);      
-        }
-
-        if(moveLeft & Input.GetKey(KeyCode.A))
-        {
-          transform.position = new Vector3(transform.position.x - speed * Time.deltaTime, transform.position.y, transform.position.z);      
-        }
-      }
+        transform.Translate(movement * speed * Time.deltaTime, Space.World);
+    }
 }
